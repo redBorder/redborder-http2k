@@ -22,6 +22,11 @@ Requires: n2kafka
 install -D -m 0644 resources/systemd/http2k.service %{buildroot}/usr/lib/systemd/system/http2k.service
 
 %pre
+getent group http2k >/dev/null || groupadd -r http2k
+getent passwd http2k >/dev/null || \
+    useradd -r -g http2k -d / -s /sbin/nologin \
+    -c "User for Http2k"
+exit 0
 
 %post
 systemctl daemon-reload
