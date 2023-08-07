@@ -8,7 +8,7 @@ License: AGPL 3.0
 URL: https://github.com/redBorder/redborder-http2k
 Source0: %{name}-%{version}.tar.gz
 
-Requires: n2kafka
+Requires: n2kafka librb-http
 
 %description
 %{summary}
