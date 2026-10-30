@@ -3,7 +3,7 @@ Description=http2k daemon
 
 [Service]
 User=root
-ExecStart=/usr/bin/n2kafka /etc/http2k/config.json
+ExecStart=/usr/bin/x2kafka /etc/http2k/config.json
 
 [Install]
 WantedBy=multi-user.target
