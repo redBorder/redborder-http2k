@@ -5,5 +5,20 @@ Description=http2k daemon
 User=root
 ExecStart=/usr/bin/x2kafka /etc/http2k/config.json
 
+# Hardening / Sandboxing Measures
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectControlGroups=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+CapabilityBoundingSet=
+SystemCallFilter=@system-service
+
 [Install]
 WantedBy=multi-user.target
